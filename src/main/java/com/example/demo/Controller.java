@@ -63,4 +63,17 @@ public class Controller {
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
     }
+
+    @Autowired
+    private LeadRepositiory repositiory;
+
+    @GetMapping("/api/lead")
+    public List<LeadModel> get() {
+        return this.repositiory.findAll();
+    }
+
+    @PostMapping("/api/lead")
+    public LeadModel insert(@RequestBody final LeadModel model) {
+        return this.repositiory.save(model);
+    }
 }
