@@ -70,7 +70,7 @@ public class Controller {
     }
 
     @Autowired
-    private LeadRepositiory repositiory;
+    private LeadRepository repositiory;
 
     @GetMapping("/api/lead")
     public List<LeadModel> get() {
